@@ -1,6 +1,6 @@
 development:
-  host: localhost
+  bind: localhost
   port: 9000
 production:
-  host: 104.131.81.55
+  bind: 104.131.81.55
   port: 9000

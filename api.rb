@@ -8,7 +8,7 @@ config_file './config.yml'
 get '/uptime' do
   content_type :json
 
-  uptime = `uptime`
+  uptime = `uptime --pretty`
   last_reboot = `last reboot -F | head -1 | awk '{print $5,$6,$7,$8,$9}'`
 
   JSON.pretty_generate({:uptime => uptime, last_reboot: last_reboot})
@@ -23,12 +23,15 @@ get '/stats' do
 
   stats = {}
   raws = [cpu,mem,io]
+  inputs = ['cpu','memory', 'io']
 
+  i = 0
   raws.each do |raw|
     raw = raw.to_s
     stat_cat = raw.lines[2]
     stat_avg = raw.lines.last
-    stats[raw] = stat_cat + ' ' + stat_avg
+    stats[inputs[i]] = stat_cat + ' ' + stat_avg
+    i += 1
   end
 
   JSON.pretty_generate(stats)

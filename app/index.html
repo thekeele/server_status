@@ -21,28 +21,30 @@
     <![endif]-->
 
     <div class="container-fluid">
+      <div class="container-fluid" style="position:relative">
+        <img alt="Brand" src="images/bruce_lee.png" style="width: 10%">
+        <a class="navbar-brand" href="#/" style="position:absolute; bottom: 0; right: 0">dev@keele</a>
+        <!-- <p class="lead" style="position:absolute; bottom: 0; right: 0">dev@keele</p> -->
+      </div>
+
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="">dev.keele</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="">Uptime</a></li>
-              <li><a ng-href="">Vitals</a></li>
-              <li><a ng-href="">Processes</a></li>
-              <li><a ng-href="">Alerts</a></li>
-            </ul>
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="masthead">
+            <nav>
+              <ul class="nav nav-justified">
+                <li><a href="#uptime">Uptime</a></li>
+                <li><a ng-href="#vitals">Vitals</a></li>
+                <li><a ng-href="#processes">Processes</a></li>
+                <li><a ng-href="#alerts">Alerts</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -50,13 +52,16 @@
 
     <div class="container">
       <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
     </div>
 
     <div class="container-fluid">
       <div class="footer">
-        <div class="container">
+        <!-- <div class="container"> -->
           <p><span class="poweredby"><img src="https://ghost.org/assets/logo-minidigitalocean-1bb39c0755ac79befc56ca39d7889eb5.png" alt="Ghost"/> Powered <em>by</em> <a href="https://digitalocean.com" target="_blank">DigitalOcean</a></span></p>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
 

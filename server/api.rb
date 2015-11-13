@@ -5,14 +5,6 @@ require 'json'
 
 config_file './config.yml'
 
-options "*" do
-  response.headers["Allow"] = "HEAD,GET,PUT,DELETE,OPTIONS"
-
-  # Needed for AngularJS
-  response.headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept"
-
-  halt HTTP_STATUS_OK
-end
 
 get '/uptime' do
   content_type :json

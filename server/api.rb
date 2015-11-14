@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/config_file'
 require 'sinatra/reloader' if development?
 require 'json'
-require 'status'
+require './status'
 
 config_file './config.yml'
 

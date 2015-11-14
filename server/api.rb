@@ -6,26 +6,32 @@ require './status'
 
 config_file './config.yml'
 
-content_type :json
-
 status = Status.new()
 
 
 get '/uptime' do
+  content_type :json
+
   JSON.pretty_generate({:uptime => status.uptime,
                         :last_reboot => status.last_reboot})
 end
 
 get '/stats' do
+  content_type :json
+
   JSON.pretty_generate(status.stats)
 end
 
 get '/processes' do
+  content_type :json
+
   JSON.pretty_generate({:nginx => status.processes[:nginx],
                         :blog => status.processes[:blog],
                         :lux => status.processes[:lux]})
 end
 
 get '/alerts' do
+  content_type :json
+
   JSON.pretty_generate(status.alerts)
 end

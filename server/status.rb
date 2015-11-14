@@ -1,35 +1,63 @@
-#!/usr/bin/env ruby
+class Status
 
-puts `uptime --pretty`
-puts `last reboot -F | head -1 | awk '{print $5,$6,$7,$8,$9}'`
+  def initalize()
+  end
 
-cpu = `sar -u 1 3`
-mem = `sar -r 1 3`
-io = `sar -b 1 3`
+  def uptime
+    uptime = `uptime --pretty`
+  end
 
-stats = [cpu,mem,io]
+  def last_reboot
+    last_reboot = `last reboot -F | head -1 | awk '{print $5,$6,$7,$8,$9}'`
+  end
 
-stats.each do |stat|
-  stat = stat.to_s
-  stat_cat = stat.lines[2]
-  stat_avg = stat.lines.last
-  puts "#{stat_cat}#{stat_avg}"
-end
+  def stats
+    cpu = `sar -u 1 3`
+    mem = `sar -r 1 3`
+    io = `sar -b 1 3`
 
-puts `service nginx status`
-puts `service blog status`
-puts `service lux status`
+    stats = {}
+    raws = [cpu,mem,io]
+    inputs = ['cpu','memory', 'io']
 
-fail_status = `sudo fail2ban-client status`
-fail_status = fail_status.to_s
-fail_jails = fail_status.lines.last.split(',')
-fail_jails[0] = fail_jails[0].split(' ').last
+    i = 0
+    raws.each do |raw|
+      raw = raw.to_s
+      stat_cat = raw.lines[2]
+      stat_avg = raw.lines.last
+      stats[inputs[i]] = stat_cat + ' ' + stat_avg
+      i += 1
+    end
 
-fail_jails.each do |jail|
-  jail = jail.chomp
-  status = `sudo fail2ban-client status #{jail}`
-  cur_ban = status.lines[6].chomp
-  total_ban = status.lines[8].chomp
-  total_fail = status.lines[4].chomp
-  puts "#{jail}#{cur_ban}#{total_ban}#{total_fail}"
+    return stats
+  end
+
+  def processes
+    nginx = `service nginx status`
+    blog = `service blog status`
+    lux = `service lux status`
+
+    return {:nginx => nginx, :blog => blog, :lux => lux}
+  end
+
+  def alerts
+    alerts = {}
+
+    fail_status = `sudo fail2ban-client status`
+    fail_status = fail_status.to_s
+    fail_jails = fail_status.lines.last.split(',')
+    fail_jails[0] = fail_jails[0].split(' ').last
+
+    fail_jails.each do |jail|
+      jail = jail.chomp
+      status = `sudo fail2ban-client status #{jail}`
+      cur_ban = status.lines[6].chomp
+      total_ban = status.lines[8].chomp
+      total_fail = status.lines[4].chomp
+      puts "#{jail}#{cur_ban}#{total_ban}#{total_fail}"
+      alerts[jail] = cur_ban + ' ' + total_ban + ' ' + total_fail
+    end
+
+    return alerts
+  end
 end

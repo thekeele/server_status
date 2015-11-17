@@ -9,6 +9,15 @@ config_file './config.yml'
 status = Status.new()
 
 
+get '/' do
+  content_type :json
+
+  JSON.pretty_generate({:uptime => "#{request.base_url}/uptime",
+                        :stats => "#{request.base_url}/stats",
+                        :processes => "#{request.base_url}/processes",
+                        :alerts => "#{request.base_url}/alerts"})
+end
+
 get '/uptime' do
   content_type :json
 

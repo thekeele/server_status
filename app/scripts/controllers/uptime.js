@@ -1,18 +1,31 @@
 'use strict';
 
 /**
- * @ngdoc function
  * @name serverStatusApp.controller:UptimeCtrl
  * @description
  * # UptimeCtrl
  * Controller of the serverStatusApp
  */
 angular.module('serverStatusApp')
-  .controller('UptimeCtrl', function ($scope, UptimeService) {
+  .controller('UptimeCtrl', function ($scope, UptimeService, $http) {
 
-    uptime = UptimeService.getUptime;
-    console.log(uptime);
-    $scope.uptime = uptime;
+    // getUptime() returns a promise so use then for processing
+    UptimeService.getUptime().then(function(uptimeData) {
 
-    $scope.last_reboot = 'Last Reboot on Tue. Oct. 12 2015 @ 7:45 pm';
+      // capitalize the u because pretty
+      var uptime = uptimeData.uptime.replace('u', 'U');
+      $scope.uptime = uptime;
+
+      // if the system is up for less than 24 hrs show warning
+      var day = uptime.search('day');
+      $scope.day = function () {
+        if (day === -1)
+          return 'warning';
+        else
+          return 'success';
+      }
+
+      var last_reboot = 'Last Reboot @ ' + uptimeData.last_reboot;
+      $scope.last_reboot = last_reboot;
+    });
   });

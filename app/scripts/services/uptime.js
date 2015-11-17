@@ -1,16 +1,29 @@
 'use strict';
 
 /**
- * @ngdoc function
- * @name serverStatusApp.controller:UptimeCtrl
+ * @name serverStatusApp.service:UptimeService
  * @description
- * # UptimeCtrl
- * Controller of the serverStatusApp
+ * # UptimeService
+ * Service of the serverStatusApp
  */
 angular.module('serverStatusApp')
-  .service('UptimeService', function ($resource) {
+  .service('UptimeService', function ($http) {
+
+    // service style, returns a promise
     this.getUptime = function () {
-      console.log('uptime service');
-      return $resource('http://104.131.81.55:9000/uptime');
+      return $http.get('http://104.131.81.55:9000/uptime').then(function (response) {
+        console.log(response.data);
+        return response.data;
+      });
     };
+
+    // factory style, returns a promise
+    // return {
+    //   getUptime: function () {
+    //     return $http.get('http://104.131.81.55:9000/uptime').then(function (response) {
+    //       console.log(response.data);
+    //       return response.data;
+    //     });
+    //   }
+    // };
   });

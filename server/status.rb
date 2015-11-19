@@ -49,6 +49,7 @@ class Status
     fail_jails[0] = fail_jails[0].split(' ').last
 
     fail_jails.each do |jail|
+      jail = jail.chomp
 
       if jail.include? '-'
         jail = jail.split('-')[1]

@@ -50,16 +50,16 @@ class Status
 
     fail_jails.each do |jail|
       jail = jail.chomp
+      status = `sudo fail2ban-client status #{jail}`
+      cur_ban = status.lines[6]
+      total_ban = status.lines[8]
+      total_fail = status.lines[4]
+      puts "#{jail}#{cur_ban}#{total_ban}#{total_fail}"
 
       if jail.include? '-'
         jail = jail.split('-')[1]
       end
 
-      status = `sudo fail2ban-client status #{jail}`
-      cur_ban = status.lines[6].chomp
-      total_ban = status.lines[8].chomp
-      total_fail = status.lines[4].chomp
-      puts "#{jail}#{cur_ban}#{total_ban}#{total_fail}"
       alerts[jail] = cur_ban + ' ' + total_ban + ' ' + total_fail
     end
 

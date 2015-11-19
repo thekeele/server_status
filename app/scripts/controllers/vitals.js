@@ -7,7 +7,7 @@
  * Controller of the serverStatusApp
  */
 angular.module('serverStatusApp')
-  .controller('VitalsCtrl', function ($scope, VitalsService, $http) {
+  .controller('VitalsCtrl', function ($scope, VitalsService) {
 
     // getVitals() returns a promise so use then for processing
     VitalsService.getVitals().then(function(vitalsData) {

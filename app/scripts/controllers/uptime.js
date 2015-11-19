@@ -7,7 +7,7 @@
  * Controller of the serverStatusApp
  */
 angular.module('serverStatusApp')
-  .controller('UptimeCtrl', function ($scope, UptimeService, $http) {
+  .controller('UptimeCtrl', function ($scope, UptimeService) {
 
     // getUptime() returns a promise so use then for processing
     UptimeService.getUptime().then(function(uptimeData) {

@@ -11,12 +11,12 @@ class Status
     last_reboot = `last reboot -F | head -1 | awk '{print $5,$6,$7,$8,$9}'`
   end
 
-  def stats
+  def vitals
     cpu = `sar -u 1 3`
     mem = `sar -r 1 3`
     io = `sar -b 1 3`
 
-    stats = {}
+    vitals = {}
     raws = [cpu,mem,io]
     inputs = ['cpu','memory', 'io']
 
@@ -25,11 +25,11 @@ class Status
       raw = raw.to_s
       stat_cat = raw.lines[2]
       stat_avg = raw.lines.last
-      stats[inputs[i]] = stat_cat + ' ' + stat_avg
+      vitals[inputs[i]] = stat_cat + ' ' + stat_avg
       i += 1
     end
 
-    return stats
+    return vitals
   end
 
   def processes

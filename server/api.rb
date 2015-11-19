@@ -21,7 +21,7 @@ get '/' do
   # content_type :json
 
   JSON.pretty_generate({:uptime => "#{request.base_url}/uptime",
-                        :stats => "#{request.base_url}/stats",
+                        :vitals => "#{request.base_url}/vitals",
                         :processes => "#{request.base_url}/processes",
                         :alerts => "#{request.base_url}/alerts"})
 end
@@ -33,10 +33,10 @@ get '/uptime' do
                         :last_reboot => status.last_reboot})
 end
 
-get '/stats' do
+get '/vitals' do
   # content_type :json
 
-  JSON.pretty_generate(status.stats)
+  JSON.pretty_generate(status.vitals)
 end
 
 get '/processes' do

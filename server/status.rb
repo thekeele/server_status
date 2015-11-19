@@ -49,7 +49,7 @@ class Status
     fail_jails[0] = fail_jails[0].split(' ').last
 
     fail_jails.each do |jail|
-      jail = jail.chomp
+      jail = jail.chomp.lstrip
       status = `sudo fail2ban-client status #{jail}`
       cur_ban = status.lines[6]
       total_ban = status.lines[8]

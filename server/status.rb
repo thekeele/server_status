@@ -52,8 +52,6 @@ class Status
 
       if jail.include? '-'
         jail = jail.split('-')[1]
-      else
-        jail = jail.chomp
       end
 
       status = `sudo fail2ban-client status #{jail}`

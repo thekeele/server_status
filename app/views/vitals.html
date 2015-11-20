@@ -1,15 +1,22 @@
 <div class="jumbotron">
   <p>
-    <a class="btn btn-lg btn-primary">Color based on max load</a>
+    <a class="btn btn-lg btn-{{cpuLoad()}}">CPU</a>
+  </p>
+  <p class="lead">
+    {{user}} | {{system}} | {{idle}}
   </p>
 
-  <p class="lead">
-    {{cpu}}
+  <p>
+    <a class="btn btn-lg btn-{{memLoad()}}">Memory</a>
   </p>
   <p class="lead">
-    {{memory}}
+    {{kb_free}} | {{kb_used}} | {{percent_used}}
+  </p>
+
+  <p>
+    <a class="btn btn-lg btn-{{ioLoad()}}">IO</a>
   </p>
   <p class="lead">
-    {{io}}
+    {{trans_per_sec}} | {{read_per_sec}} | {{write_per_sec}}
   </p>
 </div>

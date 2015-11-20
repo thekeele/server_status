@@ -16,36 +16,6 @@ class Status
     return last_reboot
   end
 
-  def get_avg_line(vital)
-    vital = vital.to_s
-    vital = vital.lines.last.split(' ')
-    return vital
-  end
-
-  def get_cpu_avg(cpu)
-    cpu_average = {}
-    cpu_average[:user_percent] = cpu[2]
-    cpu_average[:system_percent] = cpu[4]
-    cpu_average[:idle_percent] = cpu[7]
-    return cpu_average
-  end
-
-  def get_mem_avg(mem)
-    mem_average = {}
-    mem_average[:kb_free] = mem[1]
-    mem_average[:kb_used] = mem[2]
-    mem_average[:percent_used] = mem[3]
-    return mem_average
-  end
-
-  def get_io_avg(io)
-    io_average = {}
-    io_average[:trans_per_sec] = io[1]
-    io_average[:read_per_sec] = io[2]
-    io_average[:write_per_sec] = io[3]
-    return io_average
-  end
-
   def vitals
     cpu = `sar -u 1 5`
     mem = `sar -r 1 5`
@@ -106,5 +76,37 @@ class Status
     end
 
     return alerts
+  end
+
+  private
+
+  def get_avg_line(vital)
+    vital = vital.to_s
+    vital = vital.lines.last.split(' ')
+    return vital
+  end
+
+  def get_cpu_avg(cpu)
+    cpu_average = {}
+    cpu_average[:user_percent] = cpu[2]
+    cpu_average[:system_percent] = cpu[4]
+    cpu_average[:idle_percent] = cpu[7]
+    return cpu_average
+  end
+
+  def get_mem_avg(mem)
+    mem_average = {}
+    mem_average[:kb_free] = mem[1]
+    mem_average[:kb_used] = mem[2]
+    mem_average[:percent_used] = mem[3]
+    return mem_average
+  end
+
+  def get_io_avg(io)
+    io_average = {}
+    io_average[:trans_per_sec] = io[1]
+    io_average[:read_per_sec] = io[2]
+    io_average[:write_per_sec] = io[3]
+    return io_average
   end
 end

@@ -1,15 +1,11 @@
 <div class="jumbotron">
   <p>
-    <a class="btn btn-lg btn-primary">green if up, red if one down</a>
+    <a class="btn btn-lg btn-{{nginxStatus()}}">{{nginx}}</a>
   </p>
-
-  <p class="lead">
-    {{nginx}}
+  <p>
+    <a class="btn btn-lg btn-{{blogStatus()}}">{{blog}}</a>
   </p>
-  <p class="lead">
-    {{blog}}
-  </p>
-  <p class="lead">
-    {{lux}}
+  <p>
+    <a class="btn btn-lg btn-{{luxStatus()}}">{{lux}}</a>
   </p>
 </div>

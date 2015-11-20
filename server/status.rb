@@ -5,30 +5,60 @@ class Status
 
   def uptime
     uptime = `uptime --pretty`
+    uptime[0] = 'U'
+    return uptime
   end
 
   def last_reboot
     last_reboot = `last reboot -F | head -1 | awk '{print $5,$6,$7,$8,$9}'`
+    last_reboot = last_reboot.split(' ')
+    last_reboot = last_reboot[0] + ' @ ' + last_reboot[3]
+    return last_reboot
+  end
+
+  def get_avg_line(vital)
+    vital = vital.to_s
+    vital = vital.lines.last.split(' ')
+    return vital
+  end
+
+  def get_cpu_avg(cpu)
+    cpu_average = {}
+    cpu_average[:user_percent] = cpu[2]
+    cpu_average[:system_percent] = cpu[4]
+    cpu_average[:idle_percent] = cpu[7]
+    return cpu_average
+  end
+
+  def get_mem_avg(mem)
+    mem_average = {}
+    mem_average[:kb_free] = mem[1]
+    mem_average[:kb_used] = mem[2]
+    mem_average[:percent_used] = mem[3]
+    return mem_average
+  end
+
+  def get_io_avg(io)
+    io_average = {}
+    io_average[:trans_per_sec] = io[1]
+    io_average[:read_per_sec] = io[2]
+    io_average[:write_per_sec] = io[3]
+    return io_average
   end
 
   def vitals
-    cpu = `sar -u 1 3`
-    mem = `sar -r 1 3`
-    io = `sar -b 1 3`
+    cpu = `sar -u 1 5`
+    mem = `sar -r 1 5`
+    io = `sar -b 1 5`
+
+    cpu = get_avg_line(cpu)
+    mem = get_avg_line(mem)
+    io = get_avg_line(io)
 
     vitals = {}
-    raws = [cpu,mem,io]
-    inputs = ['cpu','memory', 'io']
-
-    i = 0
-    raws.each do |raw|
-      raw = raw.to_s
-      stat_cat = raw.lines[2]
-      stat_avg = raw.lines.last
-      vitals[inputs[i]] = stat_cat + ' ' + stat_avg
-      i += 1
-    end
-
+    vitals[:cpu] = get_cpu_avg(cpu)
+    vitals[:mem] = get_mem_avg(mem)
+    vitals[:io] = get_io_avg(io)
     return vitals
   end
 
@@ -37,7 +67,19 @@ class Status
     blog = `service blog status`
     lux = `service lux status`
 
-    return {:nginx => nginx, :blog => blog, :lux => lux}
+    nginx = nginx.to_s
+    nginx = nginx.split(' ')
+    nginx = nginx[1] + ' ' + nginx[3]
+
+    blog = blog.to_s.chomp
+
+    lux = lux.to_s.chomp
+
+    processes = {}
+    processes[:nginx] = nginx
+    processes[:blog] = blog
+    processes[:lux] = lux
+    return processes
   end
 
   def alerts

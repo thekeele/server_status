@@ -34,9 +34,7 @@ get '/vitals' do
 end
 
 get '/processes' do
-  JSON.pretty_generate({:nginx => status.processes[:nginx],
-                        :blog => status.processes[:blog],
-                        :lux => status.processes[:lux]})
+  JSON.pretty_generate(status.processes)
 end
 
 get '/alerts' do

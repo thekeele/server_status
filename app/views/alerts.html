@@ -1,8 +1,56 @@
 <div class="jumbotron">
-  <p>
-    <a class="btn btn-lg btn-{{sshLevel()}}">SSH</a>
-  </p>
-  <p class="lead">
-    {{ssh_ban}} | {{ssh_fail}}
-  </p>
+  <h1 class="lead">Alerts</h1>
+  <div ng-show="active_alert">
+    <p>
+      <a class="btn btn-lg btn-{{getLevel('ssh')}}">{{alert_type}}</a>
+    </p>
+    <p class="lead">
+      {{alert_ban}} | {{alert_fail}}
+    </p>
+  </div>
+
+  <div ng-show="active_alert">
+    <p>
+      <a class="btn btn-lg btn-{{getLevel('noproxy')}}">{{alert_type}}</a>
+    </p>
+    <p class="lead">
+      {{alert_ban}} | {{alert_fail}}
+    </p>
+  </div>
+
+  <div ng-show="active_alert">
+    <p>
+      <a class="btn btn-lg btn-{{getLevel('noscript')}}">{{alert_type}}</a>
+    </p>
+    <p class="lead">
+      {{alert_ban}} | {{alert_fail}}
+    </p>
+  </div>
+
+  <div ng-show="active_alert">
+    <p>
+      <a class="btn btn-lg btn-{{getLevel('nohome')}}">{{alert_type}}</a>
+    </p>
+    <p class="lead">
+      {{alert_ban}} | {{alert_fail}}
+    </p>
+  </div>
+
+  <div ng-show="active_alert">
+    <p>
+      <a class="btn btn-lg btn-{{getLevel('http')}}">{{alert_type}}</a>
+    </p>
+    <p class="lead">
+      {{alert_ban}} | {{alert_fail}}
+    </p>
+  </div>
+
+  <div ng-show="active_alert">
+    <p>
+      <a class="btn btn-lg btn-{{getLevel('badbots')}}">{{alert_type}}</a>
+    </p>
+    <p class="lead">
+      {{alert_ban}} | {{alert_fail}}
+    </p>
+  </div>
 </div>

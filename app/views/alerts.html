@@ -1,12 +1,8 @@
 <div class="jumbotron">
   <p>
-    <a class="btn btn-lg btn-primary">red if curr ban</a>
-  </p>
-
-  <p class="lead">
-    {{ssh}}
+    <a class="btn btn-lg btn-{{sshLevel()}}">SSH</a>
   </p>
   <p class="lead">
-    {{noscript}}
+    {{ssh_ban}} | {{ssh_fail}}
   </p>
 </div>

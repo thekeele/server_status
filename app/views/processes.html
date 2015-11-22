@@ -1,12 +1,9 @@
 <div class="jumbotron">
+
   <h1 class="lead">Processes</h1>
-  <p>
-    <a class="btn btn-lg btn-{{nginxStatus()}}">{{nginx}}</a>
+
+  <p ng-repeat="(key, value) in processes">
+    <a class="btn btn-lg btn-{{processStatus(value)}}">{{value}}</a>
   </p>
-  <p>
-    <a class="btn btn-lg btn-{{blogStatus()}}">{{blog}}</a>
-  </p>
-  <p>
-    <a class="btn btn-lg btn-{{luxStatus()}}">{{lux}}</a>
-  </p>
+
 </div>

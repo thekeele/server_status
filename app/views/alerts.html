@@ -1,56 +1,14 @@
 <div class="jumbotron">
+
   <h1 class="lead">Alerts</h1>
-  <div ng-show="active_alert">
+
+  <div ng-repeat="(key, value) in alerts">
     <p>
-      <a class="btn btn-lg btn-{{getLevel('ssh')}}">{{alert_type}}</a>
+      <a class="btn btn-lg btn-{{alertLevel(value)}}">{{key}}</a>
     </p>
     <p class="lead">
-      {{alert_ban}} | {{alert_fail}}
+      {{cur_ban}} | {{total_fail}}
     </p>
   </div>
 
-  <div ng-show="active_alert">
-    <p>
-      <a class="btn btn-lg btn-{{getLevel('noproxy')}}">{{alert_type}}</a>
-    </p>
-    <p class="lead">
-      {{alert_ban}} | {{alert_fail}}
-    </p>
-  </div>
-
-  <div ng-show="active_alert">
-    <p>
-      <a class="btn btn-lg btn-{{getLevel('noscript')}}">{{alert_type}}</a>
-    </p>
-    <p class="lead">
-      {{alert_ban}} | {{alert_fail}}
-    </p>
-  </div>
-
-  <div ng-show="active_alert">
-    <p>
-      <a class="btn btn-lg btn-{{getLevel('nohome')}}">{{alert_type}}</a>
-    </p>
-    <p class="lead">
-      {{alert_ban}} | {{alert_fail}}
-    </p>
-  </div>
-
-  <div ng-show="active_alert">
-    <p>
-      <a class="btn btn-lg btn-{{getLevel('http')}}">{{alert_type}}</a>
-    </p>
-    <p class="lead">
-      {{alert_ban}} | {{alert_fail}}
-    </p>
-  </div>
-
-  <div ng-show="active_alert">
-    <p>
-      <a class="btn btn-lg btn-{{getLevel('badbots')}}">{{alert_type}}</a>
-    </p>
-    <p class="lead">
-      {{alert_ban}} | {{alert_fail}}
-    </p>
-  </div>
 </div>

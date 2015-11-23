@@ -11,34 +11,35 @@ angular.module('serverStatusApp')
 
     // getAlerts() returns a promise so use then for processing
     AlertsService.getAlerts().then(function(alertsData) {
-      $scope.getLevel = function (alert_type) {
-        var active_alert = false;
-        var ban = alertsData[alert_type].cur_ban;
-        var fail = alertsData[alert_type].total_fail;
-        var level = '';
 
-        if (fail < 0) {
-          level = 'success';
+      angular.forEach(alertsData, function(value, key) {
+        // remove alert types with no failures
+        if (value.total_fail === 0) {
+          delete alertsData[key];
         }
 
-        if (fail > 0) {
+        $scope.alerts = alertsData;
+      });
+
+      $scope.alertLevel = function (alert) {
+        var cur_ban = alert.cur_ban;
+        var total_ban = alert.total_ban;
+        var total_fail = alert.total_fail;
+        var level = 'success';
+
+        $scope.cur_ban = 'Currently Banned: ' + cur_ban;
+        $scope.total_fail = 'Total failures: ' + total_fail;
+
+        if (total_fail > 0) {
           level = 'warning';
         }
 
-        if (ban > 0) {
+        if (cur_ban > 0) {
           level = 'danger';
         }
 
-        if (fail > 0) {
-          active_alert = true;
-        }
-
-        $scope.active_alert = active_alert;
-        $scope.alert_type = alert_type;
-        $scope.alert_ban = 'Currently banned: ' + ban;
-        $scope.alert_fail = 'Total failures: ' + fail;
-
         return level;
       };
+
     });
   });

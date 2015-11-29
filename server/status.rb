@@ -17,9 +17,9 @@ class Status
   end
 
   def vitals
-    cpu = `sar -u 1 5`
-    mem = `sar -r 1 5`
-    io = `sar -b 1 5`
+    cpu = `sar -u 1 1`
+    mem = `sar -r 1 1`
+    io = `sar -b 1 1`
 
     cpu = get_avg_line(cpu)
     mem = get_avg_line(mem)

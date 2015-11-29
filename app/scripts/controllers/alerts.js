@@ -23,7 +23,7 @@ angular.module('serverStatusApp')
 
       $scope.alertLevel = function (alert) {
         var cur_ban = alert.cur_ban;
-        var total_ban = alert.total_ban;
+        // var total_ban = alert.total_ban;
         var total_fail = alert.total_fail;
         var level = 'success';
 

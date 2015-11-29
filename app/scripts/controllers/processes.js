@@ -18,9 +18,9 @@ angular.module('serverStatusApp')
         var running = process.match(/running/g);
         var waiting = process.match(/waiting/g);
 
-        if (running != null && running.toString() === "running") {
+        if (running !== null && running.toString() === "running") {
           return 'success';
-        } else if (waiting != null && waiting.toString() === "waiting") {
+        } else if (waiting !== null && waiting.toString() === "waiting") {
           return 'warning';
         } else {
           return 'danger';

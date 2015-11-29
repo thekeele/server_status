@@ -9,10 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('serverStatusApp', [
-    'ngAnimate',
-    'ngResource'
-  ]);
+  .module('serverStatusApp', ['ngAnimate', 'cgBusy']);
 
 angular.module('serverStatusApp').config(function($httpProvider) {
   //Enable cross domain calls

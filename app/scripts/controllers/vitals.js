@@ -9,8 +9,10 @@
 angular.module('serverStatusApp')
   .controller('VitalsCtrl', function ($scope, VitalsService) {
 
+    $scope.buttons = true;
+
     // getVitals() returns a promise so use then for processing
-    VitalsService.getVitals().then(function(vitalsData) {
+    $scope.vitalsPromise = VitalsService.getVitals().then(function(vitalsData) {
 
       var user = vitalsData.cpu.user_percent;
       var system = vitalsData.cpu.system_percent;
@@ -53,6 +55,8 @@ angular.module('serverStatusApp')
           return 'danger';
         }
       };
+
+      $scope.buttons = false;
 
       $scope.user = 'User ' + user + '%';
       $scope.system = 'System ' + system + '%';

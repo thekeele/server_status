@@ -1,23 +1,28 @@
 <div class="jumbotron">
+
   <h1 class="lead">Vitals</h1>
-  <p>
-    <a class="btn btn-lg btn-{{cpuLoad()}}">CPU</a>
-  </p>
-  <p class="lead">
-    {{user}} | {{system}} | {{idle}}
-  </p>
 
-  <p>
-    <a class="btn btn-lg btn-{{memLoad()}}">Memory</a>
-  </p>
-  <p class="lead">
-    {{kb_free}} | {{kb_used}} | {{percent_used}}
-  </p>
+  <div cg-busy="{promise:vitalsPromise,message:'Do the fetch data dance',templateUrl:'/views/loading.html'}">
+    <p>
+      <a class="btn btn-lg btn-{{cpuLoad()}}">CPU</a>
+    </p>
+    <p class="lead">
+      {{user}} | {{system}} | {{idle}}
+    </p>
 
-  <p>
-    <a class="btn btn-lg btn-{{ioLoad()}}">IO</a>
-  </p>
-  <p class="lead">
-    {{trans_per_sec}} | {{read_per_sec}} | {{write_per_sec}}
-  </p>
+    <p>
+      <a class="btn btn-lg btn-{{memLoad()}}">Memory</a>
+    </p>
+    <p class="lead">
+      {{kb_free}} | {{kb_used}} | {{percent_used}}
+    </p>
+
+    <p>
+      <a class="btn btn-lg btn-{{ioLoad()}}">IO</a>
+    </p>
+    <p class="lead">
+      {{trans_per_sec}} | {{read_per_sec}} | {{write_per_sec}}
+    </p>
+  </div>
+
 </div>

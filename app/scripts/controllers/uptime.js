@@ -16,11 +16,13 @@ angular.module('serverStatusApp')
       // if the system is up for less than 24 hrs show warning
       var day = uptimeData.uptime.search('day');
       $scope.day = function () {
-        if (day === -1)
+        if (day === -1) {
           return 'warning';
-        else
+        }
+        else {
           return 'success';
-      }
+        }
+      };
 
       $scope.last_reboot = 'Last Reboot ' + uptimeData.last_reboot + ' EST';
     });

@@ -14,6 +14,7 @@ class Status
 
     if last_reboot.empty?
       return 'No data available'
+    end
 
     last_reboot = last_reboot.split(' ')
     last_reboot = last_reboot[0] + ' @ ' + last_reboot[3]

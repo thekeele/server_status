@@ -11,6 +11,10 @@ class Status
 
   def last_reboot
     last_reboot = `last reboot -F | head -1 | awk '{print $5,$6,$7,$8,$9}'`
+
+    if last_reboot.empty?
+      return 'No data available'
+
     last_reboot = last_reboot.split(' ')
     last_reboot = last_reboot[0] + ' @ ' + last_reboot[3]
     return last_reboot

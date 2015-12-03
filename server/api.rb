@@ -1,8 +1,10 @@
+#!/usr/bin/env ruby
+
 require 'sinatra'
 require 'sinatra/config_file'
 require 'sinatra/reloader' if development?
 require 'json'
-require './status'
+require_relative 'status'
 
 config_file './config.yml'
 

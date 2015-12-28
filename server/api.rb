@@ -8,6 +8,10 @@ require_relative 'status'
 
 config_file './config.yml'
 
+configure :development, :test do
+  enable :logging
+end
+
 status = Status.new()
 
 before do

@@ -2,13 +2,21 @@
 
   <h1 class="lead">Alerts</h1>
 
-  <div ng-repeat="(key, value) in alerts">
+  <div ng-show="isEmpty()">
     <p>
-      <a class="btn btn-lg btn-{{alertLevel(value)}}">{{key}}</a>
+      <a class="btn btn-lg btn-success">No Alerts</a>
     </p>
-    <p class="lead">
-      {{cur_ban}} | {{total_fail}}
-    </p>
+  </div>
+
+  <div ng-show="!isEmpty()">
+    <div ng-repeat="(key, value) in alerts">
+      <p>
+        <a class="btn btn-lg btn-{{alertLevel(value)}}">{{key}}</a>
+      </p>
+      <p class="lead">
+        {{cur_ban}} | {{total_fail}}
+      </p>
+    </div>
   </div>
 
 </div>

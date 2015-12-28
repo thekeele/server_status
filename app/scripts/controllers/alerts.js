@@ -17,11 +17,19 @@ angular.module('serverStatusApp')
         if (value.total_fail === 0) {
           delete alertsData[key];
         }
-
-        $scope.alerts = alertsData;
       });
 
-      $scope.alertLevel = function (alert) {
+      $scope.isEmpty = function() {
+        // angular.equals(alertsData, {})
+        if (Object.keys(alertsData).length === 0) {
+          return true;
+        } else {
+          $scope.alerts = alertsData;
+          return false;
+        }
+      };
+
+      $scope.alertLevel = function(alert) {
         var cur_ban = alert.cur_ban;
         // var total_ban = alert.total_ban;
         var total_fail = alert.total_fail;

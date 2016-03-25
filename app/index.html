@@ -2,19 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>dev.keele.me</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="images/favicon.ico">
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbuild -->
   </head>
   <body ng-app="serverStatusApp">
@@ -25,40 +26,38 @@
     <div class="container-fluid">
       <div class="container-fluid" style="position:relative">
         <img alt="Brand" src="images/bruce_lee.png" style="width: 10%">
-        <!-- <a class="navbar-brand" href="#/" style="position:absolute; bottom: 0; right: 0">Full Steam Ahead</a> -->
-        <p class="lead" style="position:absolute; bottom: 0; right: 0">serverStatus</p>
+        <p class="lead" style="position:absolute; bottom: 0; right: 0">dev.keele.me</p>
       </div>
     </div>
 
-    <div class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="js-navbar-collapse">
-        <div class="masthead">
-          <nav>
-            <ul class="nav nav-justified">
-              <li><a href="#uptime">Uptime</a></li>
-              <li><a ng-href="#vitals">Vitals</a></li>
-              <li><a ng-href="#processes">Processes</a></li>
-              <li><a ng-href="#alerts">Alerts</a></li>
-            </ul>
-          </nav>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Server Status</a>
         </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="##uptime">Uptime</a></li>
+            <li><a href="##vitals">Vitals</a></li>
+            <li><a href="##processes">Processes</a></li>
+            <li><a href="##alerts">Alerts</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-      </div>
-    </div>
+    </nav>
 
     <div class="container">
-      <div ng-include="'views/uptime.html'" ng-controller="UptimeCtrl"></div>
-      <div ng-include="'views/vitals.html'" ng-controller="VitalsCtrl"></div>
-      <div ng-include="'views/processes.html'" ng-controller="ProcessesCtrl"></div>
-      <div ng-include="'views/alerts.html'" ng-controller="AlertsCtrl"></div>
+      <div id="uptime" ng-include="'views/uptime.html'" ng-controller="UptimeCtrl"></div>
+      <div id="vitals" ng-include="'views/vitals.html'" ng-controller="VitalsCtrl"></div>
+      <div id="processes" ng-include="'views/processes.html'" ng-controller="ProcessesCtrl"></div>
+      <div id="alerts" ng-include="'views/alerts.html'" ng-controller="AlertsCtrl"></div>
     </div>
 
     <div class="container-fluid">
@@ -66,18 +65,15 @@
         <!-- <div class="container"> -->
           <p>
             <span class="poweredby">
-              <img src="images/do_logo.png" width="150px" height="150px" alt="Ghost"/> Powered <em>by</em> <a href="https://digitalocean.com" target="_blank">DigitalOcean</a>
+              <a href="https://digitalocean.com" target="_blank"><img src="images/do_logo.png" width="300px" height="50px" alt="Ghost"/></a>
             </span>
             <span class="fa-stack fa-3x">
-              <i class="fa fa-square-o fa-stack-2x"></i>
               <a href="https://github.com/thekeele"><i class="fa fa-github fa-stack-1x"></i></a>
             </span>
             <span class="fa-stack fa-3x">
-              <i class="fa fa-square-o fa-stack-2x"></i>
               <a href="https://twitter.com/thekeele"><i class="fa fa-twitter fa-stack-1x"></i></a>
             </span>
             <span class="fa-stack fa-3x">
-              <i class="fa fa-square-o fa-stack-2x"></i>
               <a href="http://keele.me"><i class="fa fa-male fa-stack-1x"></i></a>
             </span>
           </p>

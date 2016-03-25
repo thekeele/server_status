@@ -7,6 +7,11 @@
 
 body {
   padding: 0;
+  background-image: url('../images/concrete_seamless.png');
+}
+
+i {
+  color: #029DD9;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -34,7 +39,7 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 5px solid #e5e5e5;
 }
 
 .container-narrow > hr {
@@ -45,6 +50,8 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background: rgb(0, 0, 0); /* This is for ie8 and below */
+  background: rgba(0, 0, 0, 0.1);
 }
 .jumbotron .btn {
   font-size: 21px;

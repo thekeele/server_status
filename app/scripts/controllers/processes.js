@@ -12,6 +12,11 @@ angular.module('serverStatusApp')
     // getProcesses() returns a promise so use then for processing
     ProcessesService.getProcesses().then(function(processesData) {
 
+      angular.forEach(processesData, function(value, key) {
+        // remove process id from string
+        processesData[key] = value.split(',')[0];
+      });
+
       $scope.processes = processesData;
 
       $scope.processStatus = function(process) {

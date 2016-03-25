@@ -8,10 +8,36 @@
 body {
   padding: 0;
   background-image: url('../images/concrete_seamless.png');
+  font-family: monaco;
 }
 
 i {
   color: #029DD9;
+}
+
+#top {
+  position: relative;
+}
+
+#bruce {
+  width: 15%;
+}
+
+#server {
+  position:absolute;
+  bottom: -20px;
+  right: 10px;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav > li > a {
+  color: black;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -39,7 +65,7 @@ i {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 5px solid #e5e5e5;
+  border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
 
 .container-narrow > hr {

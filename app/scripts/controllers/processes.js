@@ -19,6 +19,20 @@ angular.module('serverStatusApp')
 
       $scope.processes = processesData;
 
+      $scope.processUrl = function(process) {
+        var url = 'http://dev.keele.me/';
+        var blog = process.match(/blog/g);
+        var lux = process.match(/lux/g);
+
+        if (blog !== null) {
+          return url + 'blog';
+        } else if (lux !== null) {
+          return url + 'lux';
+        } else {
+          return;
+        }
+      }
+
       $scope.processStatus = function(process) {
         var running = process.match(/running/g);
         var waiting = process.match(/waiting/g);

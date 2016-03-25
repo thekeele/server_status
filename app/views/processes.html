@@ -1,9 +1,9 @@
 <div class="jumbotron">
 
-  <h1 class="lead">Processes</h1>
+  <h1>Processes</h1>
 
   <p ng-repeat="(key, value) in processes">
-    <a class="btn btn-lg btn-{{processStatus(value)}}">{{value}}</a>
+    <a href="{{processUrl(value)}}" class="btn btn-lg btn-{{processStatus(value)}}" title="{{processUrl(value)}}">{{value}}</a>
   </p>
 
 </div>

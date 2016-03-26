@@ -15,8 +15,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = process.env.PORT || 9000;
-var ip = '192.168.1.189';
+var port = process.env.PORT || 9001;
+var ip_dev = '104.131.81.55';
+var ip_prod = '10.132.213.230';
 
 console.log('Server modules imported successfully');
 
@@ -42,5 +43,5 @@ app.get('*', function(req, res) {
 /*
   Lift Off
 */
-app.listen(port, ip);
-console.log('Node http server(' + ip + ') lending an ear on port ' + port);
+app.listen(port, ip_dev);
+console.log('Node http server(' + ip_dev + ') lending an ear on port ' + port);

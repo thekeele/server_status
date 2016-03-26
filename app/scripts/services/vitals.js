@@ -9,12 +9,13 @@
 angular.module('serverStatusApp')
   .service('VitalsService', function ($http) {
 
-    var ip = '104.131.81.55';
+    var ip_dev = '104.131.81.55';
+    var ip_prod = '10.132.213.230';
     var port = '9000';
 
     // service style, returns a promise
     this.getVitals = function () {
-      return $http.get('http://' + ip + ':' + port + '/vitals').then(function (response) {
+      return $http.get('http://' + ip_prod + ':' + port + '/vitals').then(function (response) {
         console.log('VitalsService: ', response.data);
         return response.data;
       });

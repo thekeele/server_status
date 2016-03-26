@@ -43,5 +43,5 @@ app.get('*', function(req, res) {
 /*
   Lift Off
 */
-app.listen(port, ip_dev);
-console.log('Node http server(' + ip_dev + ') lending an ear on port ' + port);
+app.listen(port, ip_prod);
+console.log('Node http server(' + ip_prod + ') lending an ear on port ' + port);

@@ -15,7 +15,7 @@ angular.module('serverStatusApp')
 
     // service style, returns a promise
     this.getUptime = function () {
-      return $http.get('http://' + ip_prod + ':' + port + '/uptime').then(function (response) {
+      return $http.get('http://' + ip_dev + ':' + port + '/uptime').then(function (response) {
         console.log('UptimeService: ', response.data);
         return response.data;
       });

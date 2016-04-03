@@ -27,6 +27,7 @@ i {
   position:absolute;
   bottom: -20px;
   right: 10px;
+  max-width: 500px;
 }
 
 .navbar {

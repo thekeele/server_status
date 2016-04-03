@@ -19,7 +19,9 @@
 
     <div class="container-fluid" id="top">
       <img alt="Brand" src="images/bruce_lee.png" id="bruce">
-      <p class="lead" id="server">dev.keele.me</p>
+      <blockquote id="server">
+        <em ng-controller="QuoteCtrl">{{quote}}</em>
+      </blockquote>
     </div>
 
     <nav class="navbar navbar-default navbar-static-top navbar-custom">
@@ -66,7 +68,7 @@
           <a href="http://keele.me"><i class="fa fa-male fa-stack-1x"></i></a>
         </span>
       </p>
-      
+
       <p>Made with
         <span class="fa-stack fa-2x">
           <i class="fa fa-heart fa-stack-1x" style="color:red"></i>
@@ -81,6 +83,7 @@
     <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
 
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/quotes.js"></script>
     <script src="scripts/controllers/uptime.js"></script>
     <script src="scripts/services/uptime.js"></script>
     <script src="scripts/controllers/vitals.js"></script>

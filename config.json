@@ -1,0 +1,12 @@
+{
+  "development": {
+    "statusPort": 9001,
+    "statusHost": "localhost",
+    "errorHandlerOptions": {"dumpExceptions": true, "showStack": true}
+  },
+  "production": {
+    "statusPort": 9001,
+    "statusHost": "10.132.213.230",
+    "errorHandlerOptions": {"dumpExceptions": false, "showStack": false}
+  }
+}

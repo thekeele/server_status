@@ -18,10 +18,8 @@ before do
   content_type :json
 
   headers 'Access-Control-Allow-Origin' => '*',
-          'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'POST']
+          'Access-Control-Allow-Methods' => ['OPTIONS', 'GET']
 end
-
-set :protection, false
 
 get '/' do
   JSON.pretty_generate({:uptime => "#{request.base_url}/uptime",

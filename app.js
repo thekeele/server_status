@@ -15,11 +15,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = process.env.PORT || 9001;
-var ip_dev = '104.131.81.55';
-var ip_prod = '10.132.213.230';
 
 console.log('Server modules imported successfully');
+
+/* Load configuration file */
+var config = require('./config.json')[app.get('env')];
 
 /*
   Express App Set Up
@@ -43,5 +43,5 @@ app.get('*', function(req, res) {
 /*
   Lift Off
 */
-app.listen(port, ip_dev);
-console.log('Node http server(' + ip_dev + ') lending an ear on port ' + port);
+app.listen(config.statusPort, config.statusHost);
+console.log('Node http server(' + config.statusHost + ') lending an ear on port ' + config.statusPort);

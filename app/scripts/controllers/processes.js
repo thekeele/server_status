@@ -23,11 +23,14 @@ angular.module('serverStatusApp')
         var url = 'http://dev.keele.me/';
         var blog = process.match(/blog/g);
         var lux = process.match(/lux/g);
+        var fingers = process.match(/homo_fingr/g);
 
         if (blog !== null) {
           return url + 'blog';
         } else if (lux !== null) {
           return url + 'lux';
+        } else if (fingers !== null) {
+          return url + 'fingers';
         } else {
           return;
         }

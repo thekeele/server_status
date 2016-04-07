@@ -94,7 +94,8 @@ i {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {*/
+@media screen and (max-width: 768px) {
   .container {
     max-width: 730px;
   }
@@ -113,5 +114,17 @@ i {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  #bruce {
+    width: 25%;
+  }
+
+  #server {
+    position:absolute;
+    bottom: -20px;
+    right: -10px;
+    width: 75%;
+    font-size: 15px;
   }
 }

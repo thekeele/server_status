@@ -10,14 +10,14 @@ class Status
   end
 
   def last_reboot
-    last_reboot = `last reboot -F | awk '{print $3,$4,$5,$6,$7}'`
+    last_reboot = `last reboot -F | head -1 | awk '{print $5,$6,$7,$8}'`
 
     if last_reboot.strip.empty?
       return 'Last reboot failed'
     end
 
     last_reboot = last_reboot.split(' ')
-    last_reboot = last_reboot[0] + ' @ ' + last_reboot[3]
+    last_reboot = last_reboot[0] + ' ' + last_reboot[1] + ' ' + last_reboot[2] + ' @ ' + last_reboot[3]
     return last_reboot
   end
 

@@ -6,7 +6,7 @@ require 'sinatra/reloader' if development?
 require 'json'
 require_relative 'status'
 
-config_file './config.yml'
+class StatusAPI < Sinatra::Base
 
 configure :development, :test do
   enable :logging
@@ -43,4 +43,5 @@ end
 
 get '/alerts' do
   JSON.pretty_generate(status.alerts)
+end
 end

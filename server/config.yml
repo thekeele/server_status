@@ -1,9 +1,0 @@
-development:
-  bind: localhost
-  port: 9000
-test:
-  bind: 104.131.81.55
-  port: 9000
-production:
-  bind: 10.132.213.230
-  port: 9000

@@ -44,6 +44,7 @@ class Status
     lux = `service lux status`
     mongodb = `service mongodb status`
     fingers = `service homo_fingr status`
+    pdf_server = `service pdf_server status`
 
     ssh = ssh.to_s.chomp
 
@@ -55,6 +56,7 @@ class Status
     lux = lux.to_s.chomp
     mongodb = mongodb.to_s.chomp
     fingers = fingers.to_s.chomp
+    pdf_server = pdf_server.to_s.chomp
 
     processes = {}
     processes[:ssh] = ssh
@@ -63,6 +65,8 @@ class Status
     processes[:lux] = lux
     processes[:mongodb] = mongodb
     processes[:fingers] = fingers
+    processes[:pdf_server] = pdf_server
+
     return processes
   end
 

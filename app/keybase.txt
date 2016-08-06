@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/thekeele
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://dev.keele.me
+  * I am thekeele (https://keybase.io/thekeele) on keybase.
+  * I have a public key ASCRFNAZ467Hsxv04oxpXm4GU6kkrHTZ9x4u36kBaPSNkgo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101c782543a2b76a8044aee2f5df822033f792746b177bbb1ad35b3a65c9eeb302f0a",
+            "host": "keybase.io",
+            "kid": "01209114d019e3aec7b31bf4e28c695e6e0653a924ac74d9f71e2edfa90168f48d920a",
+            "uid": "aeddf28957afa3bb2fca45de49b15019",
+            "username": "thekeele"
+        },
+        "service": {
+            "hostname": "dev.keele.me",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.16"
+    },
+    "ctime": 1470458227,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1470458178,
+        "hash": "e93b4d9c23f45bcdac1fcd08f6045cea729c99042acaca44f4b769da89c816e6a5bc018fe5af9024803eb34d68c9c18edd354e368384bd5ed697ff67efb4183c",
+        "seqno": 562165
+    },
+    "prev": "e5698f93fc8d0749416ab9a77c0b768a4ff387c3bf70f33b441f5ecadc110b62",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgkRTQGeOux7Mb9OKMaV5uBlOpJKx02fceLt+pAWj0jZIKp3BheWxvYWTFAvV7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxYzc4MjU0M2EyYjc2YTgwNDRhZWUyZjVkZjgyMjAzM2Y3OTI3NDZiMTc3YmJiMWFkMzViM2E2NWM5ZWViMzAyZjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwOTExNGQwMTllM2FlYzdiMzFiZjRlMjhjNjk1ZTZlMDY1M2E5MjRhYzc0ZDlmNzFlMmVkZmE5MDE2OGY0OGQ5MjBhIiwidWlkIjoiYWVkZGYyODk1N2FmYTNiYjJmY2E0NWRlNDliMTUwMTkiLCJ1c2VybmFtZSI6InRoZWtlZWxlIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJkZXYua2VlbGUubWUiLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNiJ9LCJjdGltZSI6MTQ3MDQ1ODIyNywiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDcwNDU4MTc4LCJoYXNoIjoiZTkzYjRkOWMyM2Y0NWJjZGFjMWZjZDA4ZjYwNDVjZWE3MjljOTkwNDJhY2FjYTQ0ZjRiNzY5ZGE4OWM4MTZlNmE1YmMwMThmZTVhZjkwMjQ4MDNlYjM0ZDY4YzljMThlZGQzNTRlMzY4Mzg0YmQ1ZWQ2OTdmZjY3ZWZiNDE4M2MiLCJzZXFubyI6NTYyMTY1fSwicHJldiI6ImU1Njk4ZjkzZmM4ZDA3NDk0MTZhYjlhNzdjMGI3NjhhNGZmMzg3YzNiZjcwZjMzYjQ0MWY1ZWNhZGMxMTBiNjIiLCJzZXFubyI6MTEsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAk4U6icpLjFCgZJTYes/7aBCI6bG0e0/WyfIZc92UXcVx/Frx0EBfHWHfUtGERXowblERbrzae8Vcf1fnDuC8AKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEID7SNLNfCC6cW1AUzxhCs808hl9N7lI2DZc6qfiok+Rvo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/thekeele
+
+==================================================================

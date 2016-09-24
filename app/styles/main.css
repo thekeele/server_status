@@ -66,7 +66,7 @@ i {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 10px solid rgba(0, 0, 0, 0.1);
+  /*border-top: 10px solid rgba(0, 0, 0, 0.1);*/
 }
 
 .container-narrow > hr {

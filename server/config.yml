@@ -5,7 +5,7 @@ development:
   run: false
   server: 'thin'
 production:
-  bind: '10.132.213.230'
-  port: '9005'
+  bind: '104.131.81.55'
+  port: '9443'
   run: false
   server: 'thin'

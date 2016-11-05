@@ -9,8 +9,8 @@
 angular.module('serverStatusApp')
   .service('VitalsService', function ($http) {
 
-    var ip_dev = 'dev.keele.me';
-    var port = '9443';
+    var ip_dev = '10.132.213.230';
+    var port = '9005';
 
     // service style, returns a promise
     this.getVitals = function () {

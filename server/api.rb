@@ -43,16 +43,16 @@ class StatusAPI < Sinatra::Base
     set :run, settings.production[:run]
     set :server, settings.production[:server]
 
-    def self.run!
-      super do |server|
-        server.ssl = true
-        server.ssl_options = {
-          :cert_chain_file => File.dirname(__FILE__) + "/home/thekeele/.ssl/fullchain.pem",
-          :private_key_file => File.dirname(__FILE__) + "/home/thekeele/.ssl/privkey.pem",
-          :verify_peer => false
-        }
-      end
-    end
+    #def self.run!
+    #  super do |server|
+    #    server.ssl = true
+    #    server.ssl_options = {
+    #      :cert_chain_file => "/home/thekeele/.ssl/fullchain.pem",
+    #      :private_key_file =>"/home/thekeele/.ssl/privkey.pem",
+    #      :verify_peer => false
+    #    }
+    #  end
+    #end
   end
 
   # register Routes module with Sinatra

@@ -14,7 +14,7 @@ angular.module('serverStatusApp')
 
     // service style, returns a promise
     this.getProcesses = function () {
-      return $http.get('//' + ip_dev + ':' + port + '/processes').then(function (response) {
+      return $http.get('http://' + ip_dev + ':' + port + '/processes').then(function (response) {
         console.log('ProcessesService: ', response.data);
         return response.data;
       });

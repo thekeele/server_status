@@ -14,7 +14,7 @@ angular.module('serverStatusApp')
 
     // service style, returns a promise
     this.getVitals = function () {
-      return $http.get('//' + ip_dev + ':' + port + '/vitals').then(function (response) {
+      return $http.get('http://' + ip_dev + ':' + port + '/vitals').then(function (response) {
         console.log('VitalsService: ', response.data);
         return response.data;
       });

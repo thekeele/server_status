@@ -14,7 +14,7 @@ angular.module('serverStatusApp')
 
     // service style, returns a promise
     this.getAlerts = function () {
-      return $http.get('//' + ip_dev + ':' + port + '/alerts').then(function (response) {
+      return $http.get('http://' + ip_dev + ':' + port + '/alerts').then(function (response) {
         console.log('AlertsService: ', response.data);
         return response.data;
       });

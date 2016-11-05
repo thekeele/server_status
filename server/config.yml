@@ -1,0 +1,11 @@
+root: File.dirname(__FILE__)
+development:
+  bind: '127.0.0.1'
+  port: '8008'
+  run: false
+  server: 'thin'
+production:
+  bind: '10.132.213.230'
+  port: '9001'
+  run: false
+  server: 'thin'

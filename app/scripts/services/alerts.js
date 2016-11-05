@@ -9,12 +9,12 @@
 angular.module('serverStatusApp')
   .service('AlertsService', function ($http) {
 
-    var ip_dev = '10.132.213.230';
-    var port = '9005';
+    var ip_dev = 'dev.keele.me';
+    var port = '9443';
 
     // service style, returns a promise
     this.getAlerts = function () {
-      return $http.get('http://' + ip_dev + ':' + port + '/alerts').then(function (response) {
+      return $http.get('//' + ip_dev + ':' + port + '/alerts').then(function (response) {
         console.log('AlertsService: ', response.data);
         return response.data;
       });

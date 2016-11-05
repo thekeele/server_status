@@ -47,8 +47,8 @@ class StatusAPI < Sinatra::Base
       super do |server|
         server.ssl = true
         server.ssl_options = {
-          :cert_chain_file => File.dirname(__FILE__) + "",
-          :private_key_file => File.dirname(__FILE__) + "",
+          :cert_chain_file => File.dirname(__FILE__) + "/home/thekeele/.ssl/fullchain.pem",
+          :private_key_file => File.dirname(__FILE__) + "/home/thekeele/.ssl/privkey.pem",
           :verify_peer => false
         }
       end

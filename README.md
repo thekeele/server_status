@@ -1,9 +1,5 @@
 # server-status
 
-## Build & development
+server - Ruby Sinatra API
 
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+app - AngularJS SPA

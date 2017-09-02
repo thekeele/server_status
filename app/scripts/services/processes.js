@@ -9,7 +9,7 @@
 angular.module('serverStatusApp')
   .service('ProcessesService', function ($http) {
 
-    var ip_dev = 'dev.keele.me';
+    var ip_dev = 'dev.keele.codes';
     var port = '9443';
 
     // service style, returns a promise

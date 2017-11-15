@@ -20,14 +20,12 @@ angular.module('serverStatusApp')
       $scope.processes = processesData;
 
       $scope.processUrl = function(process) {
-        var url = 'http://dev.keele.me/';
-        var blog = process.match(/blog/g);
+        var url = 'https://dev.keele.codes/';
+
         var lux = process.match(/lux/g);
         var fingers = process.match(/homo_fingr/g);
 
-        if (blog !== null) {
-          return url + 'blog';
-        } else if (lux !== null) {
+        if (lux !== null) {
           return url + 'lux';
         } else if (fingers !== null) {
           return url + 'fingers';

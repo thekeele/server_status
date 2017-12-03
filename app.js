@@ -36,7 +36,7 @@ console.log('Express App Configured');
 /*
   Routing
 */
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile('/app/index.html', { root: __dirname });
 });
 
